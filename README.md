@@ -12,7 +12,7 @@ The goal is simple: pages should help people read. If a visual pattern does not 
 - [`RECIPES.md`](RECIPES.md) - a few page patterns you can reuse
 - [`CHANGELOG.md`](CHANGELOG.md) - the current public version history
 - [`DESIGN.md`](DESIGN.md) - the implementation reference for the wiobyrne Astro site
-- [`screenshots/`](screenshots) - current visual references from Claude Design and the live site
+- [`screenshots/`](screenshots) - current visual references from the live site
 
 ## Core Vocabulary
 
@@ -38,11 +38,7 @@ The goal is simple: pages should help people read. If a visual pattern does not 
 
 ## References
 
-- [Homepage, light](screenshots/apparatus-home-light.png)
-- [Homepage, dark](screenshots/apparatus-home-dark.png)
-- [Live post, light](screenshots/apparatus-live-light.png)
-- [Live post, full view](screenshots/apparatus-live-full.png)
-- [Writing archive reference](screenshots/current-writing.png)
+- [Screenshot index](screenshots/README.md)
 
 ## Notes
 
