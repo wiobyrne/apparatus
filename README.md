@@ -40,6 +40,12 @@ The goal is simple: pages should help people read. If a visual pattern does not 
 
 - [Screenshot index](screenshots/README.md)
 
+## Using Apparatus
+
+This repo is a system reference, not a package. To use it on your own
+site, read APPARATUS.md, study the screenshots, then read DESIGN.md
+for the implementation details. Fork, adapt, and credit if it helps
+
 ## Notes
 
 This repo is intentionally lean. It is a system reference, not a component library.
