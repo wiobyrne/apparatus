@@ -26,12 +26,6 @@ This repo is a reference, not a package. Read [`WHY.md`](WHY.md) first, then [`A
 
 - [Screenshot index](screenshots/README.md)
 
-## Using Apparatus
-
-This repo is a system reference, not a package. To use it on your own
-site, read APPARATUS.md, study the screenshots, then read DESIGN.md
-for the implementation details. Fork, adapt, and credit if it helps
-
 ## Notes
 
 If you fork it, start by reading `WHY.md` and `ANTI-PATTERNS.md`.
