@@ -16,6 +16,8 @@ Every visual choice should help a reader read. If a pattern does not improve rea
 
 Use this vocabulary consistently across the public surfaces and the docs.
 
+The forest metaphor is intentionally inverted from ecology. In this system, the labels describe how the site is experienced by a reader, not how the layers work in botany.
+
 ## Core Rules
 
 1. Mono is the apparatus, serif is the human.
@@ -51,6 +53,13 @@ Use this vocabulary consistently across the public surfaces and the docs.
 - Footnotes can be added note by note as posts are migrated.
 - The post shell should stay lean by default.
 - If a new pattern keeps showing up, document it here before it spreads.
+
+See also:
+
+- [WHY.md](WHY.md)
+- [ANTI-PATTERNS.md](ANTI-PATTERNS.md)
+- [RECIPES.md](RECIPES.md)
+- [CHANGELOG.md](CHANGELOG.md)
 
 ## Reference Screens
 

@@ -4,9 +4,13 @@ Apparatus is a reading-affordance design system for Astro sites.
 
 The goal is simple: pages should help people read. If a visual pattern does not improve reading, orientation, or navigation, it does not belong.
 
-## What’s in this repo
+## What's in this repo
 
 - [`APPARATUS.md`](APPARATUS.md) - the short operational version
+- [`WHY.md`](WHY.md) - the origin story and design thesis
+- [`ANTI-PATTERNS.md`](ANTI-PATTERNS.md) - what the system is not
+- [`RECIPES.md`](RECIPES.md) - a few page patterns you can reuse
+- [`CHANGELOG.md`](CHANGELOG.md) - the current public version history
 - [`DESIGN.md`](DESIGN.md) - the implementation reference for the wiobyrne Astro site
 - [`screenshots/`](screenshots) - current visual references from Claude Design and the live site
 
@@ -43,6 +47,7 @@ The goal is simple: pages should help people read. If a visual pattern does not 
 ## Notes
 
 This repo is intentionally lean. It is a system reference, not a component library.
+If you fork it, start by reading `WHY.md` and `ANTI-PATTERNS.md`.
 
 ## License
 
