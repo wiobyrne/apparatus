@@ -4,6 +4,10 @@ Apparatus is a reading-affordance design system for Astro sites.
 
 The goal is simple: pages should help people read. If a visual pattern does not improve reading, orientation, or navigation, it does not belong.
 
+This repo is intentionally lean: it is a system reference, not a component library.
+
+Current version: v0.1 — 2026-05-04
+
 ## What's in this repo
 
 - [`APPARATUS.md`](APPARATUS.md) - the short operational version
@@ -14,27 +18,9 @@ The goal is simple: pages should help people read. If a visual pattern does not 
 - [`DESIGN.md`](DESIGN.md) - the implementation reference for the wiobyrne Astro site
 - [`screenshots/`](screenshots) - current visual references from the live site
 
-## Core Vocabulary
+## Using Apparatus
 
-- **Overstory** = newsletter + writing
-- **Canopy** = book notes + digital garden + publications
-- **Rhizosphere** = contact + about + work with me + structural pages
-
-## Core Rules
-
-1. Mono is the apparatus, serif is the human.
-2. Use charcoal, warm white, and restrained green as meaning, not decoration.
-3. Keep reg-marks and hairlines structural, not ornamental.
-4. Avoid glass, rounded cards, and dashboard chrome.
-5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
-
-## Pages
-
-- `/writing/` - essay archive
-- `/newsletter/` - newsletter front door
-- `/book-notes/` - reading shelf
-- `/publications/` - formal record
-- static pages - about, contact, work with me, and similar entry points
+This repo is a reference, not a package. Read [`WHY.md`](WHY.md) first, then [`APPARATUS.md`](APPARATUS.md), then [`DESIGN.md`](DESIGN.md) for implementation details. Fork, adapt, and credit if it helps.
 
 ## References
 
@@ -48,9 +34,8 @@ for the implementation details. Fork, adapt, and credit if it helps
 
 ## Notes
 
-This repo is intentionally lean. It is a system reference, not a component library.
 If you fork it, start by reading `WHY.md` and `ANTI-PATTERNS.md`.
 
 ## License
 
-MIT
+The docs, screenshots, and implementation references in this repo are MIT licensed. Fork freely; attribution is appreciated.
