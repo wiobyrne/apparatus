@@ -2,13 +2,15 @@
 
 Apparatus is a portable reading interface framework for digital publishing.
 
-It translates print habits into pixel spaces so pages stay readable, oriented,
-and human across surfaces.
+It translates print habits into pixel spaces so pages stay readable,
+oriented, and human across surfaces.
 
 ## Thesis
 
-Every visual choice should help a reader read. If a pattern does not improve
-reading, orientation, or navigation, it does not belong.
+Every visual choice should help a reader read.
+
+If a pattern does not improve reading, orientation, or navigation, it does not
+belong.
 
 ## Canonical vocabulary
 
@@ -61,6 +63,7 @@ reading, orientation, or navigation, it does not belong.
 4. Avoid glass, rounded cards, and dashboard chrome.
 5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
 
+For a plain-language overview, see `ABOUT.md`.
 For the problem statement behind Apparatus, see `WHY.md`.
 For the surface-specific adaptation guide, see `SURFACES.md`.
 For the implementation reference, see `DESIGN.md`.
