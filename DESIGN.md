@@ -1,13 +1,15 @@
 # DESIGN.md — wiobyrne.com
 
-This file is the canonical design reference for the Astro site at wiobyrne.com.
-Any AI agent generating pages, components, or styles for this site must read this first.
+This file is the canonical implementation reference for the Astro site at
+wiobyrne.com. It describes one surface expression of Apparatus, not the whole
+system.
 
 Token source of truth: `src/styles/tokens.css`
 Global styles: `src/styles/global.css`
 Site identifier: `data-site="wiobyrne"` on `<html>`
 
-For the site-wide reading system and page posture rules, see `APPARATUS.md`.
+For the portable reading system and surface-adaptation rules, see
+`APPARATUS.md` and `SURFACES.md`.
 
 ---
 

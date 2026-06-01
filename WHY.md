@@ -1,16 +1,22 @@
 # WHY Apparatus Exists
 
-Apparatus exists because I have spent years teaching people how to read, write, and make sense of digital spaces, and I wanted the sites I build to reflect that work instead of hiding it.
+Apparatus exists because I have spent years teaching people how to read, write,
+and make sense of digital spaces, and I wanted the sites I build to reflect
+that work instead of hiding it.
 
-The rules in this repo are not aesthetic preferences first. They are responses to a specific problem set:
+The rules in this repo are not aesthetic preferences first. They are responses
+to a specific problem set:
 
 - feed-shaped reading that encourages scanning instead of attention
-- AI tools that flatten context instead of helping people think
+- content systems that split writing, notes, and publication into disconnected silos
 - web defaults that optimize for chrome, novelty, and velocity instead of orientation
+- tools that make publishing feel harder than thinking
 
-Apparatus treats the page as a reading environment. Every choice should help the reader understand what kind of page they are on, what matters here, and where to go next.
+Apparatus treats the page as a reading environment. Every choice should help
+the reader understand what kind of page they are on, what matters here, and
+where to go next.
 
-That leads to the five rules:
+That leads to the core principles:
 
 1. Mono is the apparatus, serif is the human.
    - Mono carries labels, navigation, metadata, and structure.
@@ -28,7 +34,9 @@ That leads to the five rules:
 5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
    - Most pages are reading surfaces, not control panels.
 
-The public vocabulary is also deliberate. Overstory, Canopy, and Rhizosphere are not just site labels. They are ways of separating publication, archive, and contact into distinct reader experiences.
+The public vocabulary is also deliberate. Overstory, Canopy, and Rhizosphere are
+not just site labels. They are ways of separating publication, archive, and
+contact into distinct reader experiences.
 
 Apparatus is the system I wanted because it matches how I already think:
 
@@ -37,4 +45,8 @@ Apparatus is the system I wanted because it matches how I already think:
 - let the structure do the work
 - keep the surface calm enough that the writing can carry the weight
 
-If this repo ever drifts, come back to that sentence first: the system exists to help people read.
+This repo is meant to be borrowed. If it helps you build a better reading
+environment, adapt it and credit it.
+
+If this repo ever drifts, come back to that sentence first: the system exists
+to help people read.

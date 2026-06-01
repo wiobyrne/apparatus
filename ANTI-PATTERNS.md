@@ -25,3 +25,6 @@ What Apparatus is not:
 
 - Not multi-column at the top of landing pages unless the content genuinely requires it.
   - Most introductions should be vertical and sequential.
+
+- Not tied to one medium.
+  - The system should translate across surfaces instead of being trapped in a single implementation.

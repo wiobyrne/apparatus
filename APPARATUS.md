@@ -1,24 +1,59 @@
 # Apparatus
 
-Apparatus is the reading-affordance design system for the wiobyrne ecosystem.
+Apparatus is a portable reading interface framework for digital publishing.
 
-It is not a style guide first. It is a system for making pages easier to read, easier to orient in, and easier to keep consistent as the site grows.
+It translates print habits into pixel spaces so pages stay readable, oriented,
+and human across surfaces.
 
 ## Thesis
 
-Every visual choice should help a reader read. If a pattern does not improve reading, navigation, or orientation, it does not belong.
+Every visual choice should help a reader read. If a pattern does not improve
+reading, orientation, or navigation, it does not belong.
 
-## Vocabulary
+## Canonical vocabulary
 
-- **Overstory** = newsletter + writing
-- **Canopy** = book notes + digital garden + publications
-- **Rhizosphere** = contact + about + work with me + structural pages
+- **reading-first** = a design posture where reading is the primary job of the page
+- **reading contract** = the stable expectations readers can count on across surfaces
+- **surface** = a destination where Apparatus is expressed in a specific medium
+- **surface translation** = keeping the reading contract stable while changing the expression to fit the medium
+- **pattern** = a reusable structural form that repeats across pages or surfaces
+- **anti-pattern** = a pattern Apparatus explicitly avoids because it undermines reading
+- **portable** = able to move into another medium without losing the core reading behavior
+- **interface grammar** = the rules that govern how a page is put together
 
-Use this vocabulary consistently across the public surfaces and the docs.
+## What Apparatus includes
 
-The forest metaphor is intentionally inverted from ecology. In this system, the labels describe how the site is experienced by a reader, not how the layers work in botany.
+- core rules
+- surface translation
+- reusable patterns
+- implementation references
+- public-facing documentation
 
-## Core Rules
+## What it is not
+
+- not a theme
+- not a component library
+- not tied to a single tool or platform
+- not a slide template or note skin
+- not a second navigation system
+
+## How to adapt it
+
+- keep the reading contract stable
+- tune tone, density, motion, and accent by surface
+- add patterns only when they repeat
+- keep anti-patterns updated when drift appears
+- document surface-specific behavior when a medium proves a stable need
+
+## Where it shows up
+
+- Astro and other web sites
+- diagrams and teaching visuals
+- newsletters and publication front doors
+- slide decks and presentation frames
+- note systems such as Obsidian
+
+## Core rules
 
 1. Mono is the apparatus, serif is the human.
 2. Use charcoal, warm white, and restrained green as meaning, not decoration.
@@ -26,49 +61,6 @@ The forest metaphor is intentionally inverted from ecology. In this system, the 
 4. Avoid glass, rounded cards, and dashboard chrome.
 5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
 
-## Public Surfaces
-
-- `/writing/` = essay archive
-- `/newsletter/` = newsletter front door
-- `/book-notes/` = reading shelf
-- `/publications/` = formal record
-- static pages = about, contact, work with me, and similar entry points
-
-## Metadata
-
-- `description` = subtitle under the title
-- `lede` = optional intro, only when the post needs a more deliberate opening
-- `colophon` = optional per-post closing note
-- `published` in the vault = should be pushed to Astro
-- `draft` in Astro = whether the page renders publicly
-
-## Link Types
-
-- Tags = cross-site discovery
-- `see also` = manual sideways link when a post has a real conceptual neighbor
-- `prev/next` = reading order
-
-## Notes for Future Work
-
-- Footnotes can be added note by note as posts are migrated.
-- The post shell should stay lean by default.
-- If a new pattern keeps showing up, document it here before it spreads.
-
-See also:
-
-- [WHY.md](WHY.md)
-- [ANTI-PATTERNS.md](ANTI-PATTERNS.md)
-- [RECIPES.md](RECIPES.md)
-- [CHANGELOG.md](CHANGELOG.md)
-
-## Reference Screens
-
-These screenshots are the clearest current references for how Apparatus should feel in practice.
-
-- [Homepage, light](screenshots/apparatus-home-light.png)
-- [Homepage, dark](screenshots/apparatus-home-dark.png)
-- [Live post, light](screenshots/apparatus-live-light.png)
-- [Live post, full view](screenshots/apparatus-live-full.png)
-- [Writing archive reference](screenshots/current-writing.png)
-
-Keep these in sync with the live shell when the layout changes materially.
+For the problem statement behind Apparatus, see `WHY.md`.
+For the surface-specific adaptation guide, see `SURFACES.md`.
+For the implementation reference, see `DESIGN.md`.

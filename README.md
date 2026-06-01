@@ -1,35 +1,55 @@
 # Apparatus
 
-Apparatus is a reading-affordance design system for Astro sites.
+Apparatus is a portable reading interface framework for digital publishing.
 
-The goal is simple: pages should help people read. If a visual pattern does not improve reading, orientation, or navigation, it does not belong.
+It helps pages stay readable, oriented, and human across surfaces like web
+sites, newsletters, diagrams, slide decks, and note systems.
 
-This repo is intentionally lean: it is a system reference, not a component library.
+This repo is intentionally lean: it is a reference kit, not a component
+library or package.
 
-Current version: v0.1 — 2026-05-04
+Current version: v0.2 — 2026-06-01
 
-## What's in this repo
+## Start here
 
-- [`APPARATUS.md`](APPARATUS.md) - the short operational version
-- [`WHY.md`](WHY.md) - the origin story and design thesis
-- [`ANTI-PATTERNS.md`](ANTI-PATTERNS.md) - what the system is not
-- [`RECIPES.md`](RECIPES.md) - a few page patterns you can reuse
-- [`CHANGELOG.md`](CHANGELOG.md) - the current public version history
-- [`DESIGN.md`](DESIGN.md) - the implementation reference for the wiobyrne Astro site
-- [`screenshots/`](screenshots) - current visual references from the live site
+1. [`APPARATUS.md`](APPARATUS.md)
+2. [`WHY.md`](WHY.md)
+3. [`SURFACES.md`](SURFACES.md)
+4. [`RECIPES.md`](RECIPES.md)
+5. [`ANTI-PATTERNS.md`](ANTI-PATTERNS.md)
+6. [`GLOSSARY.md`](GLOSSARY.md)
+7. [`DESIGN.md`](DESIGN.md)
+8. [`CHANGELOG.md`](CHANGELOG.md)
 
-## Using Apparatus
+## What this repo is for
 
-This repo is a reference, not a package. Read [`WHY.md`](WHY.md) first, then [`APPARATUS.md`](APPARATUS.md), then [`DESIGN.md`](DESIGN.md) for implementation details. Fork, adapt, and credit if it helps.
+Use this repo if you want to:
+
+- understand the Apparatus reading model
+- adapt it to your own site, notes, newsletter, slides, or diagrams
+- borrow the core rules and then tune them for your own medium
+- study the wiobyrne.com Astro implementation as one expression of the system
+
+## How to use it
+
+1. Read `WHY.md` for the problem Apparatus responds to.
+2. Read `APPARATUS.md` for the thesis and core contract.
+3. Read `SURFACES.md` if you are adapting the system to another medium.
+4. Read `RECIPES.md` for reusable page shapes.
+5. Read `DESIGN.md` if you want the current wiobyrne.com implementation reference.
+6. Borrow, adapt, and credit if it helps.
+
+## Notes
+
+- This repo is a reference, not a package.
+- The public docs are meant to be readable on their own.
+- The wiobyrne.com implementation is one surface, not the whole system.
 
 ## References
 
 - [Screenshot index](screenshots/README.md)
 
-## Notes
-
-If you fork it, start by reading `WHY.md` and `ANTI-PATTERNS.md`.
-
 ## License
 
-The docs, screenshots, and implementation references in this repo are MIT licensed. Fork freely; attribution is appreciated.
+The docs, screenshots, and implementation references in this repo are MIT
+licensed. Fork freely; attribution is appreciated.

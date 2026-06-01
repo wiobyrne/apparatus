@@ -45,6 +45,24 @@ Use this for essays, newsletters, and long-form posts.
 
 Use this for about, contact, work with me, and other utility pages.
 
+## Diagram Note
+
+- Label
+- Title
+- One idea
+- Minimal supporting annotation
+
+Use this for Excalidraw and other visual teaching surfaces.
+
+## Notebook / Note Page
+
+- Eyebrow
+- Title
+- Short body
+- Related links
+
+Use this for note systems and connective writing spaces.
+
 ## Notes
 
 - Keep the layout vertical unless a real reading reason creates another structure.
