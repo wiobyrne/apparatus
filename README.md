@@ -18,9 +18,10 @@ Current version: v0.2 — 2026-06-01
 4. [`SURFACES.md`](SURFACES.md)
 5. [`RECIPES.md`](RECIPES.md)
 6. [`ANTI-PATTERNS.md`](ANTI-PATTERNS.md)
-7. [`GLOSSARY.md`](GLOSSARY.md)
-8. [`DESIGN.md`](DESIGN.md)
-9. [`CHANGELOG.md`](CHANGELOG.md)
+7. [`INDIEWEB.md`](INDIEWEB.md)
+8. [`GLOSSARY.md`](GLOSSARY.md)
+9. [`DESIGN.md`](DESIGN.md)
+10. [`CHANGELOG.md`](CHANGELOG.md)
 
 ## What this repo is for
 
