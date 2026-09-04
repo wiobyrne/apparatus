@@ -179,13 +179,47 @@ No border-bottom on the header. The glass effect replaces the line.
 - Hover: border darkens to `--text-muted`
 - Rationale: JetBrains Mono is used throughout the site for tags, dates, section labels, code, and the footer — the wordmark as a structural label is coherent with that system
 
-#### Command palette trigger (right) — locked 2026-04-22
-- Element: gear mark SVG with dashed outer ring, inline in button
-- Size: `17px × 17px` SVG inside `1.9rem × 1.9rem` button
-- Color: `currentColor` — inherits `--text-muted` at rest, `--text-main` on hover
-- Rationale: gear was Ian's favicon from ~2018 onward; dashed ring is distinctive; gear = process/friction/making, which is the philosophical counterpart to the garden metaphor on DL
-- SVG source: `04 META/🔗 Assets/mark-light.svg` (light) and `mark-dark.svg` (dark)
-- Do NOT replace with `/` or any other glyph — this is a deliberate identity decision
+#### Command palette trigger (right)
+- **Superseded 2026-09-04.** This previously specified a gear mark with a dashed
+  outer ring, described as a locked identity decision, sourced from a path that
+  no longer exists. The gear is **retired** — it is pixel-identical to the
+  Material Design settings icon and reads as generic UI. See "Marks" below.
+- The live header no longer uses a `.cmd-trigger` gear button. See "Known
+  documentation drift" at the end of this file.
+
+### Marks
+
+There is one hierarchy. Do not describe any two marks as co-primary.
+
+**Top level — the finder mark.** Three concentric squares, the orientation
+target from the corner of a QR code: *here is the frame, orient yourself,
+reading begins here*. It carries the favicon, app icon, social card, and the
+joint diptych, and it represents the brand at the top level generally.
+
+- Geometry: 24×24 grid centred on (12,12); outer rect 2.8→21.2, inner rect
+  6.8→17.2, filled eye 9.8→14.2
+- `fill: none`, `stroke-linecap: square`, `stroke-linejoin: miter`, no radius
+- Stroke `1.6` at icon sizes; inline and decorative uses may drop to `1.2`
+- Ink is the site's link colour: charcoal `#2d3432` on wiobyrne.com, green
+  `#006d48` on Digitally Literate, lifting to `#3a8f68` on the `#1a1e1c` dark canvas
+- Aged states — a misregistered ghost in the *other* property's accent, and
+  weathering on the outer ring only — appear at **180px and up, never on favicons**
+- The joint diptych is two clean finders facing a reserved gold `#a47b2f` spine,
+  used only where both properties are credited together
+
+**Beneath it — regmarks.** In-page instrument furniture, rendered through
+`RegMark.astro` (`variant`, `size`, `weight`, `stroke`, `dotRadius`). `crosshair`,
+`brackets`, `sighting`, and `quartered` ship today. The `colophon` plates are
+optional regmarks: drawn, undeployed, usable if they earn a spot. None of these
+is an identity mark, and none is the favicon.
+
+**Retired, with reason — do not revisit:** gear (generic UI), mosaic/glitch
+tiles (atmosphere, not identity), monogram (mud at 16px), dot-dissolve rings
+(die below ~24px), collation tick.
+
+**Acceptance test.** Any new mark earns its place by passing true 16/32/64px
+rasterization — real pixel grids, not scaled vectors. Sources, proofs, and the
+test script live in `04 META/48 Assets/Identity Marks/`.
 
 ### Footer
 - Border top: `1px solid var(--border)`, `margin-top: var(--space-4)`
@@ -265,11 +299,15 @@ Rules:
 - Hover: thickness `2px`, full color
 - Never green on wiobyrne.com
 
-### Favicon — locked 2026-04-22
-- File: `public/favicon.svg` (primary) + `public/favicon.ico` (fallback for old browsers)
-- Both declared in `BaseLayout.astro`: SVG first, `.ico` as `sizes="any"` fallback
-- Design: gear mark + dashed ring on `#f9f9f7` warm-white background square
-- Source SVG: `04 META/🔗 Assets/mark-light.svg`
+### Favicon — updated 2026-09-04
+- File: `public/favicon.svg` (primary) + `public/favicon.ico` (fallback), plus
+  `apple-touch-icon.png`, `icon-512.png`, and `site.webmanifest`
+- Declared in `src/components/SEO.astro`: SVG first, `.ico` as `sizes="any"`
+  fallback, with a `?v=` cache-buster that bumps whenever the plate changes
+- Design: the **finder mark**, charcoal `#2d3432`, inverting to `#e6e4e1` in dark
+  via an embedded `prefers-color-scheme` block. Clean single-colour plate, no
+  background square, no rounded corners
+- Source SVG: `04 META/48 Assets/Identity Marks/svg/mark-wio-finder.svg`
 
 ### Command Palette
 - Replaces the old search modal + separate theme toggle
@@ -378,3 +416,27 @@ Date field: `data.date`. Draft filter: `!data.draft`.
 | 2026-04-22 | Gear mark conceptual framing established | Gear represents creative process (churning, building, friction, making); garden represents outcomes (seeds → evergreens). wiobyrne.com shows the full cycle; DL shows what survives it |
 | 2026-04-22 | favicon.svg added to public/ | Site had no favicon; SVG-first with .ico fallback; gear mark on warm-white background |
 | 2026-04-22 | JetBrains Mono weight 700 added to Google Fonts import | Required for bold wordmark rendering |
+| 2026-09-04 | Finder mark adopted as the top-level brand mark for both properties | Survives 16px where dot-decay and barcodes fail; reads as native instrument vocabulary; a finder pattern is literally an orientation device, so form and thesis agree |
+| 2026-09-04 | Crosshair demoted from identity mark to one regmark among several | At real size it reads unambiguously as a rifle scope; fine as page furniture, wrong as identity |
+| 2026-09-04 | Colophon plate demoted to optional regmark | Its exploration stalled rather than concluded; kept as drawn-but-undeployed furniture, not a personal-authorship register |
+| 2026-09-04 | Gear mark retired | Pixel-identical to the Material Design settings icon; reads as generic UI |
+| 2026-09-04 | `rx="4"` removed from `public/favicon.svg` | Rounded corners had been shipping against the `--radius: 0` invariant |
+
+---
+
+## Known documentation drift
+
+Recorded 2026-09-04 during the mark-hierarchy correction. These sections
+describe an earlier build and have **not** yet been reconciled against what is
+live. Where this file disagrees with the shipped site, the site is correct.
+
+- **Header wordmark.** Specified above as boxed all-caps mono locked to
+  `1.9rem`. The live header renders mixed-case "Ian O'Byrne" with a transparent
+  border and an inline regmark alongside.
+- **Command palette trigger.** Specified as a `.cmd-trigger` gear button. The
+  live header uses a `MENU` toggle with a `+` glyph opening a panel.
+- **Layout file names.** Several sections reference `BaseLayout.astro`. The live
+  layout is `ApparatusBase.astro`, with head tags in `SEO.astro`.
+
+These are queued for a reconciliation pass and are listed here so nobody
+borrows them as current.
