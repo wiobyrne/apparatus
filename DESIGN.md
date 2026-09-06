@@ -8,6 +8,16 @@ Token source of truth: `src/styles/tokens.css`
 Global styles: `src/styles/global.css`
 Site identifier: `data-site="wiobyrne"` on `<html>`
 
+Layout files, corrected 2026-09-06 — there is no `BaseLayout.astro`:
+
+- `src/layouts/ApparatusBase.astro` — the shell every page renders into
+- `src/components/SEO.astro` — all head tags: icons, manifest, theme-color,
+  og/twitter meta
+- `src/layouts/WritingPost.astro`, `PublicationPost.astro`, `BookNotePost.astro`
+  — the content layouts
+- `src/components/Header.astro`, `Footer.astro`, `CommandPalette.astro`,
+  `RegMark.astro` — the shared furniture
+
 For the portable reading system and surface-adaptation rules, see
 `APPARATUS.md` and `SURFACES.md`.
 
@@ -28,30 +38,55 @@ Not influences: Medium, Substack, card-grid tech blogs.
 
 All tokens defined in `src/styles/tokens.css`. Do not hardcode hex values.
 
-### Light mode (default)
+Values below reconciled against `tokens.css` and `apparatus-themes.css` on
+2026-09-06.
+
+### Light mode (default) — `:root` in `tokens.css`
 ```
---bg-page:      #f9f9f7    /* warm lived-in white — base surface */
---bg-subtle:    #f2f4f2    /* elevated surface — code blocks, wells, understory */
---text-main:    #2d3432    /* charcoal ink — warm, not cold black */
---text-muted:   #5a605e    /* metadata, captions, secondary text */
---text-soft:    #6b716f    /* timestamps, tertiary labels */
---border-light: rgba(45, 52, 50, 0.15)   /* ghost border */
---border:       var(--border-light)       /* alias used by components */
---link:         #2d3432    /* links match text — black, editorial */
+--warm-white:    #f9f9f7    /* warm lived-in white — base surface */
+--bg-canvas:     #f9f9f7    /* the canvas; --bg-page is an alias of this */
+--bg-subtle:     #f2f4f2    /* elevated surface — code blocks, wells, understory */
+--charcoal:      #2d3432    /* charcoal ink — warm, not cold black */
+--text-main:     #2d3432
+--text-secondary:#5a605e    /* metadata, captions */
+--text-muted:    #6b716f    /* secondary text */
+--text-soft:     #8a908e    /* timestamps, tertiary labels */
+--border-ghost:  rgba(45, 52, 50, 0.15)   /* ghost border; --border aliases it */
+--site-link:     #2d3432    /* links match text — black, editorial */
+--hermes-gold:   #a47b2f    /* reserved: diptych spine, OG stamp-rule */
 ```
 
-### Dark mode
+### Dark mode — `[data-mode="dark"]` in `apparatus-themes.css`
+A desk-lamp posture, not an inverted day.
 ```
---bg-page:      #1a1e1c
---bg-subtle:    #222826
---text-main:    #e6e4e1
---text-muted:   #8a908e
---border-light: rgba(230, 228, 225, 0.12)
---link:         #e6e4e1
+--bg-canvas:          #090b0c
+--bg-subtle:          #101516
+--warm-white:         #090b0c
+--charcoal:           #ece8e2    /* primary text/strokes — now cream */
+--text-main:          #ece8e2
+--text-secondary:     #b8b2ab
+--text-muted:         #848b86
+--text-soft:          #646b66
+--border-ghost:       rgba(236, 232, 226, 0.14)
+--site-link:          #ece8e2
+--hermes-gold:        #c9a84a
+--shell-plate:        #0f1312
+--shell-plate-strong: #151a19
+--green-accent:       #7ea78e    /* desaturated so it doesn't glow */
 ```
 
-Dark mode triggers on `prefers-color-scheme: dark` OR `data-theme="dark"` on `<html>`.
-Manual toggle stored in `localStorage('theme')`.
+`#1a1e1c` is **not** a canvas token. It survives only as the dark
+`theme-color` meta in `SEO.astro` and as the OG card ground in
+`src/lib/og-card.ts` — the dark plate the mark is stamped on, not the page
+behind it. The earlier `--bg-page: #1a1e1c` / `--bg-subtle: #222826` /
+`--text-main: #e6e4e1` block documented here described a build that no longer
+exists.
+
+Dark mode is a **manual** posture: `data-mode="dark"` on `<html>`, toggled from
+the menu panel and stored in `localStorage('wiobyrne-reading-mode')`. There is
+no `prefers-color-scheme` fallback. `ApparatusBase.astro` also accepts an
+optional `theme` prop that stamps `data-theme` on `<html>`, but nothing sets it
+and no stylesheet reads it — it is a hook, not a colour switch.
 
 ### Green — Digitally Literate / garden connective tissue
 ```
@@ -146,13 +181,12 @@ Current homepage exception:
 - This is a compositional aid, not decorative chrome
 - Use sparingly; if spacing alone can carry the rhythm, prefer spacing
 
-**Glass nav:**
-```css
-background: var(--glass-surface);          /* rgba(249, 249, 247, 0.72) */
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-```
-No border-bottom on the header. The glass effect replaces the line.
+**Glass nav — retired 2026-09-06.** `--glass-surface`
+(`rgba(249, 249, 247, 0.72)`) and a `blur(12px)` backdrop are still defined in
+`tokens.css`, but the header stopped using them: it is a solid
+`var(--bg-canvas)` bar with a hairline bottom border. The one surviving blur in
+the system is the command palette backdrop. Kept here as a named token, not as a
+header rule.
 
 **Ambient shadow (used sparingly):**
 ```
@@ -164,28 +198,61 @@ No border-bottom on the header. The glass effect replaces the line.
 
 ## Components
 
-### Header
-- `position: sticky; top: 0; z-index: 100`
-- Height: `3.5rem`
-- Background: `var(--glass-surface)` with `backdrop-filter: blur(12px)`
-- No bottom border
-- Nav links: `--font-sans`, `var(--text-ui)`, `--text-muted` default, `--text-main` on hover/active
-- Active page: `font-weight: 600`
+### Header — reconciled 2026-09-06
+- `.app-header`: `position: sticky; top: 0; z-index: 100`
+- Background: solid `var(--bg-canvas)` with a
+  `1px solid var(--border-ghost)` bottom border. The glass-and-no-line
+  treatment documented here previously — `var(--glass-surface)` plus
+  `backdrop-filter: blur(12px)` — is not what ships; `--glass-surface` still
+  exists as a token but the header does not use it
+- No fixed height. `.app-header-inner` sets it through
+  `padding: 16px clamp(20px, 2.75vw, 30px) 14px` inside `max-width:
+  var(--width-site)`, flex, space-between, `gap: 20px`
+- **There are no nav links in the header bar.** Navigation lives in the menu
+  panel: `.app-menu-link` in `--font-mono` `0.8rem`, `letter-spacing: 0.06em`,
+  no `text-transform`, `min-height: 1.85rem`, borderless and transparent
+- Active page: `aria-current="page"` plus an `.is-active` class on the panel link
+- The panel opens off `data-open="true"` on `.app-header`, animating
+  `max-height` to `36rem`
 
-#### Wordmark (left) — locked 2026-04-22
-- Treatment: **boxed all-caps mono** ("AD" style)
-- Font: `--font-mono`, `0.75rem`, weight `700`, `letter-spacing: 0.12em`, `text-transform: uppercase`
-- Frame: `border: 1px solid var(--border)`, `height: 1.9rem`, `padding: 0 0.7em` — matches gear trigger height exactly
-- Hover: border darkens to `--text-muted`
-- Rationale: JetBrains Mono is used throughout the site for tags, dates, section labels, code, and the footer — the wordmark as a structural label is coherent with that system
+#### Nameplate (left) — reconciled 2026-09-06
+`.app-wordmark` is a link to `/` holding an inline regmark and the name.
 
-#### Command palette trigger (right)
-- **Superseded 2026-09-04.** This previously specified a gear mark with a dashed
-  outer ring, described as a locked identity decision, sourced from a path that
-  no longer exists. The gear is **retired** — it is pixel-identical to the
-  Material Design settings icon and reads as generic UI. See "Marks" below.
-- The live header no longer uses a `.cmd-trigger` gear button. See "Known
-  documentation drift" at the end of this file.
+- Treatment: **mixed-case name in Grenze Gotisch**, not a boxed mono label
+- Name (`.wordmark-text`): `--font-identity` (Grenze Gotisch), `1.38rem`,
+  weight `500` via `font-variation-settings: "wght" 500`,
+  `letter-spacing: 0.01em`, no `text-transform`
+- **`font-feature-settings: "ss01" 1` is required here.** Grenze's default
+  capital I reads as an eth, so "Ian" renders as "Ðan". ss01 is the alternate
+  capital set with a clean I, O, and B. Personal names take ss01 wherever they
+  appear, including when a page hero is a name; display headlines that are
+  phrases keep the ornate default caps
+- Inline mark: `RegMark` `crosshair`, `size={14}`, `weight={1.45}`,
+  `dotRadius={1}`, `gap: 0.55rem` from the name. This is regmark furniture
+  beside the nameplate, not the identity mark — see "Marks" below
+- Frame: `border: 1px solid transparent`, no background, no box-shadow,
+  `border-radius: 0`, `min-height: 2.05rem`
+- Hover: `opacity: 0.72`, no underline
+- Rationale: the name is the nameplate. The boxed all-caps mono treatment locked
+  on 2026-04-22 was a mark standing in for a graphic; once the finder mark
+  arrived there was a real mark, and the wordmark could go back to being a name
+
+#### Menu toggle (right) — reconciled 2026-09-06
+- **The gear is retired.** It was pixel-identical to the Material Design
+  settings icon and read as generic UI. There is no `.cmd-trigger` button, and
+  the command palette has no header button at all
+- `.app-menu-toggle` — a labelled control, not an icon: `MENU` in `--font-mono`
+  `0.74rem`, `letter-spacing: 0.18em`, uppercase, with a `+` glyph
+  (`.app-menu-toggle-glyph`) beside it
+- Frame: `min-height: 2.05rem` (matching the nameplate), `padding: 0.38rem
+  0.75rem 0.36rem`, `border: 1px solid var(--shell-border-strong)`,
+  `border-radius: 0`, a plate gradient background with inset top highlight and
+  bottom shadow
+- Hover inverts to a charcoal plate with `--bg-page` text
+- State: `aria-expanded` on the button, `aria-controls="app-menu-panel"`, and
+  `data-open` on the header element
+- Opens `#app-menu-panel`, a shallow drawer in three columns — **Pages**,
+  **Tools** (theme, text size, search, topics, RSS), **Connect**
 
 ### Marks
 
@@ -201,7 +268,10 @@ joint diptych, and it represents the brand at the top level generally.
 - `fill: none`, `stroke-linecap: square`, `stroke-linejoin: miter`, no radius
 - Stroke `1.6` at icon sizes; inline and decorative uses may drop to `1.2`
 - Ink is the site's link colour: charcoal `#2d3432` on wiobyrne.com, green
-  `#006d48` on Digitally Literate, lifting to `#3a8f68` on the `#1a1e1c` dark canvas
+  `#006d48` on Digitally Literate, lifting to `#3a8f68` on DL's dark canvas
+  (`oklch(18% 0.028 152)` ≈ `#08150b`). `#1a1e1c` is wiobyrne.com's dark plate —
+  its `theme-color` and OG card ground — not DL's canvas; the two were conflated
+  until 2026-09-06
 - Aged states — a misregistered ghost in the *other* property's accent, and
   weathering on the outer ring only — appear at **180px and up, never on favicons**
 - The joint diptych is two clean finders facing a reserved gold `#a47b2f` spine,
@@ -309,17 +379,24 @@ Rules:
   background square, no rounded corners
 - Source SVG: `04 META/48 Assets/Identity Marks/svg/mark-wio-finder.svg`
 
-### Command Palette
-- Replaces the old search modal + separate theme toggle
-- Trigger: `/` key (when not in an input), `⌘K`/`Ctrl+K`, or gear button in header
-- Header button: `.cmd-trigger` — `1.9rem` square, `border: 1px solid var(--border)`, no background, gear mark SVG (17px, `currentColor`)
+### Command Palette — reconciled 2026-09-06
+- Replaces the old search modal. It is **search only**: navigation and theme
+  moved into the menu panel, so the palette no longer carries "Go to" rows or a
+  theme action
+- Trigger: `/` key (when not in an input), `⌘K`/`Ctrl+K`, or the **Search**
+  action inside the menu panel. **There is no header button** — the gear that
+  used to open it is retired
+- Component: `src/components/CommandPalette.astro`, mounted once in
+  `ApparatusBase.astro`
 - Overlay: `position: fixed; inset: 0; z-index: 300` with blurred backdrop (`rgba(0,0,0,0.4)` + `blur(3px)`)
 - Box: `max-width: 540px`, `border: 1px solid var(--border)`, `border-radius: 0`, `var(--bg-page)` background
-- Default state: "Go to" nav links + "Toggle theme (T)" action
-- Search state: Pagefind results (7 max) — title + sanitized excerpt
+- Empty state: an empty results region behind a `/` glyph and the input — no
+  default row list
+- Search state: Pagefind results (7 max) under a "Posts" group label — title + sanitized excerpt
 - Excerpt sanitization: strips all HTML except `<mark>` highlights, truncates to ~140 chars
-- Keyboard: ↑↓ navigate rows, Enter activates, Escape closes, T toggles theme
-- Decoupled via `CustomEvent('open-command-palette')` — palette listens, header dispatches
+- Keyboard: ↑↓ navigate rows, Enter activates, Escape closes
+- Decoupled via `Event('open-command-palette')` — palette listens; the header and
+  the homepage dispatch
 - Pagefind loaded via `new Function` workaround to bypass Vite bundler resolution
 - Powered by Pagefind (runs at build time — search unavailable in dev mode)
 
@@ -421,22 +498,11 @@ Date field: `data.date`. Draft filter: `!data.draft`.
 | 2026-09-04 | Colophon plate demoted to optional regmark | Its exploration stalled rather than concluded; kept as drawn-but-undeployed furniture, not a personal-authorship register |
 | 2026-09-04 | Gear mark retired | Pixel-identical to the Material Design settings icon; reads as generic UI |
 | 2026-09-04 | `rx="4"` removed from `public/favicon.svg` | Rounded corners had been shipping against the `--radius: 0` invariant |
+| 2026-09-06 | Header nameplate reconciled to the live build | The 2026-04-22 boxed all-caps mono spec described a mark standing in for a graphic; once the finder mark existed, the wordmark could go back to being a name in Grenze |
+| 2026-09-06 | `.cmd-trigger` spec removed; menu toggle documented instead | The gear it described was retired 2026-09-04 and the palette has had no header button since; the live control is a labelled `MENU` toggle opening a three-column panel |
+| 2026-09-06 | Command palette documented as search-only | Navigation and theme moved into the menu panel; the "Go to" rows and the `T` theme action no longer exist |
+| 2026-09-06 | Layout file names corrected | There is no `BaseLayout.astro`; the shell is `ApparatusBase.astro` with head tags in `SEO.astro` |
+| 2026-09-06 | DL dark canvas corrected from `#1a1e1c` to `oklch(18% 0.028 152)` ≈ `#08150b` | `#1a1e1c` is wiobyrne.com's dark plate; DL's live token in `000-tokens.scss` is a different, darker green-black, and the two had been conflated across the kit |
+| 2026-09-06 | "Known documentation drift" section removed | Its three items were reconciled against the live build rather than left standing |
 
 ---
-
-## Known documentation drift
-
-Recorded 2026-09-04 during the mark-hierarchy correction. These sections
-describe an earlier build and have **not** yet been reconciled against what is
-live. Where this file disagrees with the shipped site, the site is correct.
-
-- **Header wordmark.** Specified above as boxed all-caps mono locked to
-  `1.9rem`. The live header renders mixed-case "Ian O'Byrne" with a transparent
-  border and an inline regmark alongside.
-- **Command palette trigger.** Specified as a `.cmd-trigger` gear button. The
-  live header uses a `MENU` toggle with a `+` glyph opening a panel.
-- **Layout file names.** Several sections reference `BaseLayout.astro`. The live
-  layout is `ApparatusBase.astro`, with head tags in `SEO.astro`.
-
-These are queued for a reconciliation pass and are listed here so nobody
-borrows them as current.

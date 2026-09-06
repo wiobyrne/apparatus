@@ -1,5 +1,40 @@
 # Changelog
 
+## v0.4 — 2026-09-06
+
+Reconciled the remaining stale sections against the shipped site and removed the
+drift list rather than carrying it forward.
+
+- Rewrote the header **nameplate** spec: the live header is a mixed-case "Ian
+  O'Byrne" in Grenze Gotisch at weight 500 with an inline crosshair regmark and a
+  transparent frame, not the boxed all-caps mono label locked in April.
+- Recorded the **ss01 requirement** for personal names set in Grenze — the
+  default capital I reads as an eth, so "Ian" renders as "Ðan". Display
+  headlines that are phrases keep the ornate default caps.
+- Replaced the `.cmd-trigger` gear spec with the live **`MENU` toggle** and its
+  three-column panel (Pages, Tools, Connect).
+- Corrected the **command palette** to what it actually is: search only, opened
+  by `/`, `⌘K`/`Ctrl+K`, or the panel's Search action. No header button, no "Go
+  to" rows, no `T` theme action.
+- Corrected the **colour tokens** in both modes. The documented dark block
+  (`--bg-page: #1a1e1c`) described a build that no longer exists; the live dark
+  canvas is `#090b0c`. `#1a1e1c` survives only as the dark `theme-color` meta
+  and the OG card ground.
+- Corrected the **Digitally Literate dark canvas** from `#1a1e1c` to its live
+  token, `oklch(18% 0.028 152)` ≈ `#08150b`. `#1a1e1c` is wiobyrne.com's dark
+  plate; the two had been conflated across the kit.
+- Corrected the **theme mechanism**: dark mode is manual `data-mode="dark"`
+  stored in `localStorage('wiobyrne-reading-mode')`, with no
+  `prefers-color-scheme` fallback.
+- Listed the real **layout files**. There is no `BaseLayout.astro`; the shell is
+  `ApparatusBase.astro` with head tags in `SEO.astro`.
+- Corrected the **header shell**: it is a solid `--bg-canvas` bar with a
+  hairline bottom border, not a glass-and-no-line nav, and it carries no nav
+  links — navigation moved into the menu panel. `--glass-surface` survives as a
+  token; the only blur left in the system is the palette backdrop.
+- Removed the "Known documentation drift" section added in v0.3. Its three items
+  are now reconciled.
+
 ## v0.3 — 2026-09-04
 
 Established a single mark hierarchy and corrected canon that had gone stale.
