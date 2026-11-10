@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.5 — 2026-11-10
+
+Aligned the shared rules and wiobyrne.com implementation reference with the
+Apparatus v0.5 decision record.
+
+- Standardized website reading and headings on Source Serif 4 and system voice
+  on JetBrains Mono; reserved Source Sans 3 for slides and thumbnails.
+- Confirmed the finder as shared identity, with regmarks as structural punctuation.
+- Defined the optional title highlighter and the single-paper share-card layout.
+- Recorded UTC date consistency and the cross-surface slide and thumbnail roles.
+- Added current wiobyrne.com homepage and share-card screenshots.
+- Reconciled stale font and mark guidance in the implementation reference.
+
 ## v0.4 — 2026-09-06
 
 Reconciled the remaining stale sections against the shipped site and removed the

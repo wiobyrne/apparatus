@@ -57,11 +57,14 @@ belong.
 
 ## Core rules
 
-1. Mono is the apparatus, serif is the human.
-2. Use charcoal, warm white, and restrained green as meaning, not decoration.
-3. Keep reg-marks and hairlines structural, not ornamental.
-4. Avoid glass, rounded cards, and dashboard chrome.
-5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
+1. On websites, Source Serif 4 carries reading, headings, and wordmarks; JetBrains Mono carries navigation and system information.
+2. Source Sans 3 is reserved for slide UI and YouTube thumbnails; websites use no sans-serif.
+3. The finder is the identity mark; regmarks and hairlines are structural punctuation.
+4. Use charcoal, warm white, and restrained green as meaning, not decoration.
+5. A highlighter may mark one optional title phrase; it never carries meaning on its own and never appears in body text.
+6. Share cards carry one paper field, a readable title, concise description, and finder footer.
+7. Avoid glass, rounded cards, and dashboard chrome.
+8. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
 
 For a plain-language overview, see `ABOUT.md`.
 For the problem statement behind Apparatus, see `WHY.md`.

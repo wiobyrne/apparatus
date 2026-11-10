@@ -6,6 +6,11 @@ Current visual references for the public Apparatus system.
 
 - [home-light.png](home-light.png) - homepage, light mode
 - [home-dark.png](home-dark.png) - homepage, dark mode
+- [wiobyrne-home-dark-v0.5.png](wiobyrne-home-dark-v0.5.png) - live wiobyrne.com homepage after the v0.5 type and identity pass, in dark mode
+
+## Social share
+
+- [wiobyrne-og-card-v0.5.png](wiobyrne-og-card-v0.5.png) - default 1200×630 public-record card
 
 ## Writing
 

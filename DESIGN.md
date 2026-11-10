@@ -41,7 +41,7 @@ All tokens defined in `src/styles/tokens.css`. Do not hardcode hex values.
 Values below reconciled against `tokens.css` and `apparatus-themes.css` on
 2026-09-06.
 
-### Light mode (default) — `:root` in `tokens.css`
+### Light palette — `:root` in `tokens.css`
 ```
 --warm-white:    #f9f9f7    /* warm lived-in white — base surface */
 --bg-canvas:     #f9f9f7    /* the canvas; --bg-page is an alias of this */
@@ -53,7 +53,7 @@ Values below reconciled against `tokens.css` and `apparatus-themes.css` on
 --text-soft:     #8a908e    /* timestamps, tertiary labels */
 --border-ghost:  rgba(45, 52, 50, 0.15)   /* ghost border; --border aliases it */
 --site-link:     #2d3432    /* links match text — black, editorial */
---hermes-gold:   #a47b2f    /* reserved: diptych spine, OG stamp-rule */
+--hermes-gold:   #a47b2f    /* reserved: shared finder diptych spine */
 ```
 
 ### Dark mode — `[data-mode="dark"]` in `apparatus-themes.css`
@@ -75,32 +75,29 @@ A desk-lamp posture, not an inverted day.
 --green-accent:       #7ea78e    /* desaturated so it doesn't glow */
 ```
 
-`#1a1e1c` is **not** a canvas token. It survives only as the dark
-`theme-color` meta in `SEO.astro` and as the OG card ground in
-`src/lib/og-card.ts` — the dark plate the mark is stamped on, not the page
-behind it. The earlier `--bg-page: #1a1e1c` / `--bg-subtle: #222826` /
-`--text-main: #e6e4e1` block documented here described a build that no longer
-exists.
+`#1a1e1c` is **not** a canvas token. It survives as the dark `theme-color`
+meta in `SEO.astro`; share cards use a single-paper layout with a light paper
+or dark colorway rather than a separate dark band.
 
-Dark mode is a **manual** posture: `data-mode="dark"` on `<html>`, toggled from
-the menu panel and stored in `localStorage('wiobyrne-reading-mode')`. There is
-no `prefers-color-scheme` fallback. `ApparatusBase.astro` also accepts an
-optional `theme` prop that stamps `data-theme` on `<html>`, but nothing sets it
-and no stylesheet reads it — it is a hook, not a colour switch.
+The initial mode follows `prefers-color-scheme`. A reader can override it from
+the menu; that choice is stored in local storage and a cookie, and the system
+preference continues to apply until an override is saved.
 
-### Green — Digitally Literate / garden connective tissue
+### Green accent and highlight
 ```
 --green-accent: #006d48    /* forest green — growth, literacy, ecosystem links */
 --green-hover:  #00522f
 ```
-Green is not the general wiobyrne.com accent color, but it may appear where the page is explicitly pointing into Digitally Literate, the newsletter, or the digital garden. Use it as connective tissue, not generic decoration.
+Green is the shared accent hue. The dark palette lifts its green value to
+`#7ea78e` for contrast. Use green for topic accents, optional title highlights,
+and share-card details; ordinary wiobyrne.com text links remain charcoal.
 
 ### Site-level variables
 Components reference these; overridden per-site via `data-site`:
 ```
 --site-bg:          var(--bg-page)
 --site-link:        var(--link)
---site-accent:      transparent          /* no global accent on wiobyrne.com */
+--site-accent:      var(--green-accent)
 --site-prose-width: var(--width-prose)   /* 660px */
 --site-shell-width: var(--width-home)    /* 720px */
 ```
@@ -109,29 +106,34 @@ Components reference these; overridden per-site via `data-site`:
 
 ## Typography
 
-### Font stack
+### Website font families
 ```
 --font-serif: "Source Serif 4", Georgia, serif
---font-sans:  "Inter", system-ui, sans-serif
 --font-mono:  "JetBrains Mono", "Courier New", monospace
 ```
 
-Loaded from Google Fonts in `global.css`.
+Source Serif 4 and JetBrains Mono are self-hosted variable font files declared
+with `@font-face` in `src/styles/tokens.css`. Source Serif 4 includes optical
+sizing. The website loads no sans-serif family.
 
 ### Core rule
-> If it helps you **read**, it's serif.
-> If it helps you **navigate**, it's sans.
+> Reading and every heading use Source Serif 4. The system voice uses JetBrains Mono.
 
-**Body default: `--font-serif`**
-Everything is serif unless explicitly overridden.
+Source Serif 4 is used for reading, all headings, wordmarks, and homepage
+heroes. Headings use weight 600 and optical sizing; large display headings may
+use optical size around 60.
 
-**UI override — these always use sans:**
+JetBrains Mono is used for navigation, menus, labels, metadata, dates, tags, and
+search UI. Website UI does not switch to sans-serif.
+
+Source Sans 3 is reserved for small slide UI and YouTube thumbnail text; it is
+never used on the websites.
+
+**Heading rule:**
 ```css
-h1, h2, h3, h4, h5, h6, nav, .ui, .meta, .button, .section-label, .eyebrow, small
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 600; }
+nav, .ui, .meta, .button, .section-label, .eyebrow, small { font-family: var(--font-mono); }
 ```
-
-**Exception:** The homepage intro `<h1>` overrides back to serif with a local rule + comment,
-because it is editorial content, not navigation.
 
 ### Type scale
 ```
@@ -215,27 +217,16 @@ header rule.
 - The panel opens off `data-open="true"` on `.app-header`, animating
   `max-height` to `36rem`
 
-#### Nameplate (left) — reconciled 2026-09-06
-`.app-wordmark` is a link to `/` holding an inline regmark and the name.
+#### Nameplate (left) — reconciled 2026-11-10
+`.app-wordmark` is a link to `/` holding the finder and the name.
 
-- Treatment: **mixed-case name in Grenze Gotisch**, not a boxed mono label
-- Name (`.wordmark-text`): `--font-identity` (Grenze Gotisch), `1.38rem`,
-  weight `500` via `font-variation-settings: "wght" 500`,
-  `letter-spacing: 0.01em`, no `text-transform`
-- **`font-feature-settings: "ss01" 1` is required here.** Grenze's default
-  capital I reads as an eth, so "Ian" renders as "Ðan". ss01 is the alternate
-  capital set with a clean I, O, and B. Personal names take ss01 wherever they
-  appear, including when a page hero is a name; display headlines that are
-  phrases keep the ornate default caps
-- Inline mark: `RegMark` `crosshair`, `size={14}`, `weight={1.45}`,
-  `dotRadius={1}`, `gap: 0.55rem` from the name. This is regmark furniture
-  beside the nameplate, not the identity mark — see "Marks" below
+- Treatment: mixed-case name in Source Serif 4, weight 600, optical sizing on
+- Finder: three-square identity mark at 18px, full site ink, vertically centered
+- No stylistic font feature is required for names
 - Frame: `border: 1px solid transparent`, no background, no box-shadow,
   `border-radius: 0`, `min-height: 2.05rem`
 - Hover: `opacity: 0.72`, no underline
-- Rationale: the name is the nameplate. The boxed all-caps mono treatment locked
-  on 2026-04-22 was a mark standing in for a graphic; once the finder mark
-  arrived there was a real mark, and the wordmark could go back to being a name
+- Rationale: the finder carries identity; the name remains readable type
 
 #### Menu toggle (right) — reconciled 2026-09-06
 - **The gear is retired.** It was pixel-identical to the Material Design
@@ -270,7 +261,7 @@ joint diptych, and it represents the brand at the top level generally.
 - Ink is the site's link colour: charcoal `#2d3432` on wiobyrne.com, green
   `#006d48` on Digitally Literate, lifting to `#3a8f68` on DL's dark canvas
   (`oklch(18% 0.028 152)` ≈ `#08150b`). `#1a1e1c` is wiobyrne.com's dark plate —
-  its `theme-color` and OG card ground — not DL's canvas; the two were conflated
+  its `theme-color`, not the current OG card ground; it is not DL's canvas; the two were conflated
   until 2026-09-06
 - Aged states — a misregistered ghost in the *other* property's accent, and
   weathering on the outer ring only — appear at **180px and up, never on favicons**
@@ -293,8 +284,8 @@ test script live in `04 META/48 Assets/Identity Marks/`.
 
 ### Footer
 - Border top: `1px solid var(--border)`, `margin-top: var(--space-4)`
-- Name: `--font-serif` bold
-- Links: `--font-sans` `0.8125rem` `--text-muted`
+- Name: `--font-serif`, weight 600
+- Links: `--font-mono` `0.8125rem` `--text-muted`
 - Copyright: `--font-mono` `0.75rem`
 
 ### Buttons
@@ -308,9 +299,9 @@ test script live in `04 META/48 Assets/Identity Marks/`.
 - Text-only: title + date on one row, description below; no images, no arrows
 - No border separators inside the list — spacing only
 - Hover: `background: var(--bg-subtle)` on the list item (tonal shift)
-- Title: `--font-sans`, `0.9375rem`, weight 600
+- Title: `--font-serif`, `0.9375rem`, weight 600
 - Date: `--font-mono`, `0.72rem`, right-aligned, low visual weight
-- Description: `--font-sans`, `0.8125rem`, `--text-muted`
+- Description: `--font-serif`, `0.8125rem`, `--text-muted`
 
 ### Homepage composition
 The homepage is a **newsletter growth engine with intellectual credibility as the conversion mechanism**.
@@ -367,7 +358,8 @@ Rules:
 - `text-underline-offset: 3px`, `text-decoration-thickness: 1px`
 - Underline color: `color-mix(in srgb, var(--site-link) 35%, transparent)` at rest
 - Hover: thickness `2px`, full color
-- Never green on wiobyrne.com
+- Green is reserved for topic accents, title highlights, and share-card details;
+  regular prose links remain charcoal
 
 ### Favicon — updated 2026-09-04
 - File: `public/favicon.svg` (primary) + `public/favicon.ico` (fallback), plus
@@ -402,7 +394,7 @@ Rules:
 
 ---
 
-## Featured Images & Social (og:image)
+## Featured Images & Social Share Cards
 
 **No featured images on post listings.** Posts are text-only in archive views.
 
@@ -411,8 +403,16 @@ Rules:
 - The image directly illustrates something in the post
 - Never use stock photos
 
-**og:image fallback:** `/public/og.png` (1200×630)
-The SEO component (`src/components/SEO.astro`) handles all og/twitter meta automatically.
+**Default image:** `/og.png` (1200×630), the public-record single-paper card.
+Writing and publication cards are generated per page by
+`src/pages/og/[slug].png.ts` and `src/pages/og/publications/[slug].png.ts` using
+`src/lib/og-card.ts`; `SEO.astro` selects those images for page metadata.
+
+Cards use a mono label, a Source Serif 4 weight-600 title, a one- or two-line
+serif description, and a finder/domain footer. Titles scale through set sizes
+and are never truncated. Optional `og_highlight` frontmatter marks one phrase
+with pale green. Dates use the frontmatter calendar date in UTC, matching the
+page display. Quotes and apostrophes are typographic.
 
 ---
 
@@ -449,11 +449,11 @@ Date field: `data.date`. Draft filter: `!data.draft`.
 - No shadows on cards — borders only, and only where needed
 - No rounded corners — `border-radius: 0` everywhere
 - No animation beyond subtle hover transitions (`0.15–0.25s ease`)
-- No generic green on wiobyrne.com — green is reserved for explicit Digitally Literate / garden bridges
+- Green is an accent for topics, title highlights, and share-card details; ordinary prose links remain charcoal
 - No colored links — links match text color
 - No avatar or headshot on the homepage — writing and mission statement carry credibility; faces read as personal blog, not publication
 - Don't break the intro h1 into two lines — the run-on is intentional; the second clause is the landing, not a subtitle
-- Don't add color accents to the intro — the only accent in the system is DL green (wrong site), and the sparse warmth is the point
+- Keep the intro unaccented for a calm opening; green remains available for topic accents, title highlights, and share-card details
 - No font sizes below `0.7rem`
 - No structural `hr` or divider lines — use spacing and tonal shifts
 
@@ -504,5 +504,6 @@ Date field: `data.date`. Draft filter: `!data.draft`.
 | 2026-09-06 | Layout file names corrected | There is no `BaseLayout.astro`; the shell is `ApparatusBase.astro` with head tags in `SEO.astro` |
 | 2026-09-06 | DL dark canvas corrected from `#1a1e1c` to `oklch(18% 0.028 152)` ≈ `#08150b` | `#1a1e1c` is wiobyrne.com's dark plate; DL's live token in `000-tokens.scss` is a different, darker green-black, and the two had been conflated across the kit |
 | 2026-09-06 | "Known documentation drift" section removed | Its three items were reconciled against the live build rather than left standing |
+| 2026-11-10 | Apparatus v0.5 type, mark, and share-surface ruling | Retired Grenze Gotisch and Inter; websites use Source Serif 4 and JetBrains Mono; finder is identity; share cards use one paper layout and never truncate titles |
 
 ---
