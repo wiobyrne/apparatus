@@ -8,7 +8,7 @@ people orient themselves, read comfortably, and move around without friction.
 This repo is a small public guide to that approach. It is not a component
 library, package, or theme.
 
-Current version: v0.2 — 2026-06-01
+Current version: v0.5 — 2026-11-10
 
 ## Start here
 
@@ -21,7 +21,8 @@ Current version: v0.2 — 2026-06-01
 7. [`INDIEWEB.md`](INDIEWEB.md)
 8. [`GLOSSARY.md`](GLOSSARY.md)
 9. [`DESIGN.md`](DESIGN.md)
-10. [`CHANGELOG.md`](CHANGELOG.md)
+10. [`decisions/2026-11-10-apparatus-v0.5.md`](decisions/2026-11-10-apparatus-v0.5.md)
+11. [`CHANGELOG.md`](CHANGELOG.md)
 
 ## What this repo is for
 

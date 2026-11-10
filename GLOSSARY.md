@@ -74,3 +74,29 @@ Ideas worth testing that are not yet part of the stable system truth.
 The preferred method for updating Apparatus.
 
 New findings should extend the system without erasing the reasoning trail.
+
+## Finder
+
+The three-square orientation mark and shared top-level identity for both sites.
+Below about 16px, use the simplified two-square variant.
+
+## Regmark
+
+A structural mark such as a crosshair or line-with-mark. Regmarks punctuate
+slides, sections, and diagrams; they do not replace the finder as identity.
+
+## Highlighter
+
+An optional tint behind one phrase in a title. It never appears in body text,
+and the meaning of the title must not depend on it.
+
+## Website type roles
+
+Source Serif 4 is for reading, headings, and wordmarks. JetBrains Mono is for
+navigation and system information. Source Sans 3 is not used on websites; it is
+reserved for small slide UI and YouTube thumbnails.
+
+## Share card
+
+A 1200×630 single-paper social image with a mono label, readable Source Serif
+title, concise description, and finder footer. The title is never truncated.
