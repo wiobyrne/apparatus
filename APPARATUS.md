@@ -13,9 +13,16 @@ surface documentation. Do not maintain a second full specification in the
 vault or a site repository.
 
 Apparatus is a portable reading interface framework for digital publishing.
+It is also a public practice of digital literacy: a way of designing, writing,
+and documenting digital spaces where reading, authorship, and judgment remain
+visible and negotiable.
 
 It translates print habits into pixel spaces so pages stay readable,
 oriented, and human across surfaces.
+
+The framework is one part of that practice. The repository records the shared
+agreements that shape Apparatus and why consequential agreements change; it
+does not attempt to disclose or preserve every private step in the work.
 
 ## Thesis
 

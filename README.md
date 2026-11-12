@@ -1,12 +1,16 @@
 # Apparatus
 
-Apparatus is a way of designing digital pages so they are easier to read.
+Apparatus is a public practice of digital literacy: an evolving record of how
+I design, write, and work with digital tools to make spaces that help people
+read, orient, and exercise judgment.
 
-It started with one website, but the idea is broader: a page should help
-people orient themselves, read comfortably, and move around without friction.
+It uses a portable reading framework for digital publishing. A page should
+help people understand where they are, read comfortably, and find the next
+useful path without fighting the interface.
 
-This repo is a small public guide to that approach. It is not a component
-library, package, or theme.
+This repository is the public notebook for that practice. It holds the shared
+design rules, meaningful decisions, and examples that emerge as the work is
+used and revised. It is not a component library, package, or theme.
 
 Current version: v0.5 — 2026-11-10
 
@@ -32,6 +36,8 @@ Use this repo if you want to:
 - adapt the approach to your own site, notes, newsletter, slides, or diagrams
 - borrow the core rules and tune them for your own medium
 - study the wiobyrne.com Astro implementation as one expression of the system
+- examine how design and publishing tools shape attention, authorship, and
+  judgment
 
 ## How to use it
 
@@ -49,6 +55,8 @@ Use this repo if you want to:
 - The public docs are meant to be readable on their own.
 - The wiobyrne.com implementation is one surface, not the whole system.
 - `ABOUT.md` is the quick explanation for non-specialists.
+- `decisions/` records consequential public commitments; it is not a complete
+  record of private process.
 
 ## References
 

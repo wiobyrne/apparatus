@@ -1,52 +1,73 @@
 # WHY Apparatus Exists
 
 Apparatus exists because I have spent years teaching people how to read, write,
-and make sense of digital spaces, and I wanted the sites I build to reflect
-that work instead of hiding it.
+and make sense of digital spaces. I wanted the places where I publish to
+reflect that work instead of hiding it.
 
-The rules in this repo are not aesthetic preferences first. They are responses
-to a specific problem set:
+The rules in this repository are not aesthetic preferences first. They are
+responses to a familiar set of problems:
 
 - feed-shaped reading that encourages scanning instead of attention
-- content systems that split writing, notes, and publication into disconnected silos
-- web defaults that optimize for chrome, novelty, and velocity instead of orientation
+- content systems that split writing, notes, and publication into disconnected
+  silos
+- web defaults that optimize for chrome, novelty, and velocity instead of
+  orientation
 - tools that make publishing feel harder than thinking
 
-Apparatus treats the page as a reading environment. Every choice should help
-the reader understand what kind of page they are on, what matters here, and
-where to go next.
+Apparatus treats a page as a reading environment. Every choice should help a
+reader understand what kind of page they are on, what matters there, and where
+to go next.
 
-That leads to the core principles:
+## From print to pixel
 
-1. Mono is the apparatus, serif is the human.
-   - Mono carries labels, navigation, metadata, and structure.
-   - Serif carries prose, arguments, and human reading.
+This is not an attempt to make the web look like print. It is an inquiry into
+what print did well for readers—attention, sequence, hierarchy, and the feel
+of a page as a place—and what digital spaces can add: links, revision,
+connection, and return.
 
-2. Use charcoal, warm white, and restrained green as meaning, not decoration.
-   - Color should signal relationship, not just brand.
+The work is to carry forward the useful affordances of print while taking
+digital possibilities seriously. Typography, metadata, structure, and
+selective linking are not decorative details. They help establish the
+conditions in which a reader can orient and make meaning.
 
-3. Keep reg-marks and hairlines structural, not ornamental.
-   - Dividers should help organize reading, not act as decoration.
+## Tools shape the work
 
-4. Avoid glass, rounded cards, and dashboard chrome.
-   - These patterns push the site toward generic SaaS behavior and away from editorial reading.
+Every tool and space invites some behaviors and discourages others. Feeds
+invite scanning. A garden invites returning. Git records change. A newsletter
+creates a recurring relationship with readers. These affordances shape writing
+as much as the writer does.
 
-5. Pages should read top-to-bottom in one column unless the content genuinely needs another structure.
-   - Most pages are reading surfaces, not control panels.
+AI belongs in this inquiry as another tool with real affordances, pressures,
+and limits. It can accelerate drafting, research, pattern-finding, and
+iteration. It can also flatten voice, obscure provenance, or make unexamined
+choices feel finished. The question is not whether a tool was used; it is
+whether human judgment remains active, visible, and accountable.
 
-The public vocabulary is also deliberate. Overstory, Canopy, and Rhizosphere are
-not just site labels. They are ways of separating publication, archive, and
-contact into distinct reader experiences.
+## Reading, authorship, and agency
 
-Apparatus is the system I wanted because it matches how I already think:
+A page is never only a container for content. Its links, defaults, hierarchy,
+ownership, and tools shape what readers and writers can notice and choose.
+Apparatus tries to make those choices more visible and more deliberate.
 
-- start with the thing
-- name the thing clearly
-- let the structure do the work
-- keep the surface calm enough that the writing can carry the weight
+It is a small practice of publishing autonomy: setting more of the terms
+around where work lives, how it is read, what gets linked, and how revisions
+are recorded. That is not the same as collective power. An individual site
+cannot substitute for unions, institutional policy, or democratic governance.
+It can make the terms of digital work more inspectable, provide a concrete
+example of more humane terms, and give people language for discussing or
+changing them together.
 
-This repo is meant to be borrowed. If it helps you build a better reading
-environment, adapt it and credit it.
+## The public record
 
-If this repo ever drifts, come back to that sentence first: the system exists
-to help people read.
+This repository is not only a reference kit. It is an evolving record of
+decisions, revisions, examples, constraints, and the agreements that changed
+through use. It shows the reasoning that shapes Apparatus without claiming to
+preserve every private step or tool trace behind the work.
+
+Apparatus is the durable home for that practice. *Print to Pixel* is one public
+essay doorway into it.
+
+## The working rule
+
+If this repository ever drifts, come back to this: the system exists to help
+people read, orient, and exercise judgment.

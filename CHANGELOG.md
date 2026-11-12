@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+Clarified Apparatus as a public practice of digital literacy alongside its
+role as a portable reading framework.
+
+- Reframed the public documentation around reading, authorship, judgment, and
+  the affordances of digital tools.
+- Defined the repository as a public record of shared commitments and
+  meaningful changes, rather than a complete record of private process.
+- Named *Print to Pixel* as an essay doorway into the work.
+
 ## v0.5 — 2026-11-10
 
 Aligned the shared rules and wiobyrne.com implementation reference with the
