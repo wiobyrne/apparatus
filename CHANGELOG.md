@@ -7,9 +7,11 @@ role as a portable reading framework.
 
 - Reframed the public documentation around reading, authorship, judgment, and
   the affordances of digital tools.
-- Defined the repository as a public record of shared commitments and
+- Defined Apparatus as a public record of shared commitments and
   meaningful changes, rather than a complete record of private process.
 - Named *Print to Pixel* as an essay doorway into the work.
+- Added **A Living Record**, a plain-language guide to how Apparatus changes
+  and how readers can follow that history.
 
 ## v0.5 — 2026-11-10
 

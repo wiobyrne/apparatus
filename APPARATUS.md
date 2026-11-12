@@ -2,15 +2,15 @@
 
 ## Authority
 
-This repository is the authoritative source for shared Apparatus design
+The Apparatus documents here are the authoritative source for shared design
 decisions. `APPARATUS.md` states the shared principles; `SURFACES.md` records
-how they translate across media. Website repositories own implementation
-details, exact tokens, components, build behavior, and documented local
-exceptions. The Obsidian vault preserves rationale, dated decisions, and
-history, and links readers to these specifications and to the implementations.
-If a shared rule changes, update this repository first and then align affected
-surface documentation. Do not maintain a second full specification in the
-vault or a site repository.
+how they translate across media. Each website owns its implementation details,
+exact tokens, components, build behavior, and documented local exceptions. The
+Obsidian vault preserves rationale, dated decisions, and history, and links
+readers to these specifications and to the implementations. If a shared rule
+changes, update these documents first and then align affected surface
+documentation. Do not maintain a second full specification in the vault or on
+an individual site.
 
 Apparatus is a portable reading interface framework for digital publishing.
 It is also a public practice of digital literacy: a way of designing, writing,
@@ -20,9 +20,9 @@ visible and negotiable.
 It translates print habits into pixel spaces so pages stay readable,
 oriented, and human across surfaces.
 
-The framework is one part of that practice. The repository records the shared
-agreements that shape Apparatus and why consequential agreements change; it
-does not attempt to disclose or preserve every private step in the work.
+The framework is one part of that practice. Apparatus records the shared
+agreements that shape it and why consequential agreements change; it does not
+attempt to disclose or preserve every private step in the work.
 
 ## Thesis
 
@@ -101,6 +101,7 @@ implementation tokens and components; this shared specification defines the
 color roles and surface distinctions, not a duplicate token inventory.
 
 For a plain-language overview, see `ABOUT.md`.
+For an explanation of how Apparatus changes, see `LIVING-RECORD.md`.
 For the problem statement behind Apparatus, see `WHY.md`.
 For the surface-specific adaptation guide, see `SURFACES.md`.
 For the implementation reference, see `DESIGN.md`.

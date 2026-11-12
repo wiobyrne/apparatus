@@ -33,11 +33,11 @@ replacement name for Apparatus.
 
 ## Implications
 
-- The repository continues to hold shared design rules, surface guidance,
+- The public documents continue to hold shared design rules, surface guidance,
   decision records, and examples.
 - Meaningful changes to the public contract should explain both what changed
   and why it changed.
-- The repository records public commitments and consequential decisions, not a
+- Apparatus records public commitments and consequential decisions, not a
   complete private journal or a tool-by-tool provenance trail.
 - AI may be discussed where it materially changes method, judgment,
   authorship, or a design decision. It does not require routine labels,

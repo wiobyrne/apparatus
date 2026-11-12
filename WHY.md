@@ -4,8 +4,8 @@ Apparatus exists because I have spent years teaching people how to read, write,
 and make sense of digital spaces. I wanted the places where I publish to
 reflect that work instead of hiding it.
 
-The rules in this repository are not aesthetic preferences first. They are
-responses to a familiar set of problems:
+The rules here are not aesthetic preferences first. They are responses to a
+familiar set of problems:
 
 - feed-shaped reading that encourages scanning instead of attention
 - content systems that split writing, notes, and publication into disconnected
@@ -33,9 +33,9 @@ conditions in which a reader can orient and make meaning.
 ## Tools shape the work
 
 Every tool and space invites some behaviors and discourages others. Feeds
-invite scanning. A garden invites returning. Git records change. A newsletter
-creates a recurring relationship with readers. These affordances shape writing
-as much as the writer does.
+invite scanning. A garden invites returning. A version history records change.
+A newsletter creates a recurring relationship with readers. These affordances
+shape writing as much as the writer does.
 
 AI belongs in this inquiry as another tool with real affordances, pressures,
 and limits. It can accelerate drafting, research, pattern-finding, and
@@ -59,15 +59,15 @@ changing them together.
 
 ## The public record
 
-This repository is not only a reference kit. It is an evolving record of
-decisions, revisions, examples, constraints, and the agreements that changed
-through use. It shows the reasoning that shapes Apparatus without claiming to
-preserve every private step or tool trace behind the work.
+Apparatus is not only a reference kit. It is an evolving record of decisions,
+revisions, examples, constraints, and the agreements that changed through use.
+It shows the reasoning that shapes the work without claiming to preserve every
+private step or tool trace behind it.
 
 Apparatus is the durable home for that practice. *Print to Pixel* is one public
 essay doorway into it.
 
 ## The working rule
 
-If this repository ever drifts, come back to this: the system exists to help
+If Apparatus ever drifts, come back to this: the system exists to help
 people read, orient, and exercise judgment.

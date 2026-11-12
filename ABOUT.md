@@ -21,8 +21,8 @@ Apparatus has four related parts:
   where work lives and how it is read
 - teaching material that others can adapt, question, or reject
 
-The sites are live experiments. This repository is the public notebook. Essays
-and posts translate individual moments of practice into teaching.
+The sites are live experiments. Apparatus is the public notebook. Essays and
+posts translate individual moments of practice into teaching.
 
 ## Print to pixel
 
@@ -66,5 +66,6 @@ literacy.
 ## Where to go next
 
 - Read [`APPARATUS.md`](APPARATUS.md) for the shared rules.
+- Read [`A Living Record`](LIVING-RECORD.md) to see how those rules change.
 - Read [`WHY.md`](WHY.md) for the argument behind them.
 - Read [`SURFACES.md`](SURFACES.md) for how they change by medium.
